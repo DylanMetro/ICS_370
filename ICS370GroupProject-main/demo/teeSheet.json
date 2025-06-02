@@ -1,0 +1,24 @@
+[
+  {
+    "day": "Monday",
+    "teeTimes": [
+      {
+        "time": "08:00 AM",
+        "players": ["John Doe", "Jane Smith"]
+      },
+      {
+        "time": "09:00 AM",
+        "players": []
+      }
+    ]
+  },
+  {
+    "day": "Tuesday",
+    "teeTimes": [
+      {
+        "time": "08:00 AM",
+        "players": ["Alice Brown"]
+      }
+    ]
+  }
+]

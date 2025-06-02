@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.SecondView">
+    <top>
+        <Label fx:id="displayLabel" BorderPane.alignment="CENTER"/>
+    </top>
+    <center>
+        <Button fx:id="returnButton" onAction="#returnButtonClicked" text="Go Back" />
+
+    </center>
+
+</BorderPane>
