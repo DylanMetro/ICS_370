@@ -27,7 +27,7 @@ public class SecondView implements Initializable {
     }
 
     public void returnButtonClicked() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(GolfApplication.class.getResource("first-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(SchedulerApplication.class.getResource("first-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
 
         ((Stage)returnButton.getScene().getWindow()).setScene(scene);

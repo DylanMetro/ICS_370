@@ -15,46 +15,46 @@ public class HomeController {
     private Label statusLabel;
 
     @FXML
-    private void onReserveCancelTeeTimeClicked() {
-        System.out.println("Reserve/Cancel Tee Time button clicked.");
-        updateStatus("Navigating to Reserve/Cancel Tee Time...");
-        loadTeeSheetView();
+    private void onManageBookingTimeClicked() { 
+        System.out.println("Reserve/Cancel Booking button clicked.");
+        updateStatus("Navigating to Reserve/Cancel Booking...");
+        loadBookingView();
     }
 
     @FXML
-    private void onRentClubsClicked() {
-        System.out.println("Rent a Set of Clubs button clicked.");
-        updateStatus("Navigating to Rent a Set of Clubs...");
-        loadRentClubsView();
+    private void onRentEquipClicked() {
+        System.out.println("Rent equipment button clicked.");
+        updateStatus("Navigating to Rent Equipment...");
+        loadRentEquipView();
     }
 
-    private void loadTeeSheetView() {
+    private void loadBookingView() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/first-view.fxml"));
             Parent root = loader.load();
 
             Stage stage = (Stage) statusLabel.getScene().getWindow();
             stage.setScene(new Scene(root));
-            stage.setTitle("Tee Sheet");
+            stage.setTitle("Bookings");
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
-            showAlert("Error", "Failed to load the Tee Sheet view.");
+            showAlert("Error", "Failed to load the Booking view.");
         }
     }
 
-    private void loadRentClubsView() {
+    private void loadRentEquipView() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/clubRental.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/equipRental.fxml"));
             Parent root = loader.load();
 
             Stage stage = (Stage) statusLabel.getScene().getWindow();
             stage.setScene(new Scene(root));
-            stage.setTitle("Rent a Set of Golf Clubs");
+            stage.setTitle("Rent Equipment");
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
-            showAlert("Error", "Failed to load the Rent a Set of Clubs view.");
+            showAlert("Error", "Failed to load the Rent Equipment view.");
         }
     }
     @FXML
