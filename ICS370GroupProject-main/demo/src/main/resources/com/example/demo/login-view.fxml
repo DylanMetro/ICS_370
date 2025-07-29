@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<VBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" spacing="15" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.LoginController">
-    <Label text="Login" style="-fx-font-size: 20px;" />
-    <TextField fx:id="usernameField" promptText="Username" />
-    <PasswordField fx:id="passwordField" promptText="Password" />
-    <Button text="Login" fx:id="loginButton" onAction="#loginButtonClicked" />
-</VBox>
