@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" spacing="20" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.SportSelectionController">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+
+    <Label text="Select a Sport" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+    <ListView fx:id="sportListView" prefHeight="200" prefWidth="300" />
+    <Button fx:id="continueButton" text="Continue" onAction="#onContinue" />
+    <Button text="Logout" onAction="#logout" />
+</VBox>

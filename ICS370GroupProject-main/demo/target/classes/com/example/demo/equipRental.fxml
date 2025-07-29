@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" spacing="15" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.EquipmentRentalController">
+
+    <Text style="-fx-font-size: 20; -fx-font-weight: bold;" text="Rent Equipment" />
+
+    <TableView fx:id="equipmentTable" prefHeight="400" prefWidth="760">
+        <columns>
+            <TableColumn fx:id="itemTypeColumn" prefWidth="250" text="Item Description" />
+
+            <TableColumn fx:id="EquipmentIDColumn" text="Item ID" />
+            <TableColumn fx:id="isReservedColumn" text="Reserved" />
+            <TableColumn fx:id="renterNameColumn" prefWidth="120" text="Renter Name" />
+            <TableColumn fx:id="rentedTimeColumn" prefWidth="120" text="Rented Time" />
+            <TableColumn fx:id="returnedTimeColumn" prefWidth="120" text="Returned Time" />
+            <TableColumn fx:id="venueIDColumn" text="Venue ID" />
+        </columns>
+    </TableView>
+
+    <TextField fx:id="renterNameField" promptText="Enter your name" />
+    <DatePicker fx:id="rentalDatePicker" promptText="Select rental date" />
+    <TextField fx:id="rentalTimeField" promptText="Enter rental time (HH:mm)" />
+    <Button onAction="#confirmRental" text="Confirm Rental" />
+    <Button onAction="#returnEquipment" text="Return Item" />
+    <Button onAction="#goToHomeScreen" text="Home" />
+    <Button onAction="#changeSport" text="Change Sport" />
+    <Button text="Logout" onAction="#logout" />
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+    <Label text="Status: Ready" fx:id="statusLabel" style="-fx-font-size: 14px; -fx-text-fill: green;" />
+</VBox>

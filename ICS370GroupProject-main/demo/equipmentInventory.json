@@ -1,0 +1,23 @@
+{
+    "equipmentInventory": [
+      {
+        "equipmentID": 1,
+        "type": "golf clubs",
+        "venueID": "GOLF001",
+        "isRented": true,
+        "renterName": "Dylan Bice",
+        "rentalStartTime": "2025-12-03 8:00",
+        "rentalEndTime": ""
+      },
+      {
+        "equipmentID": 2,
+        "type": "basketball",
+        "venueID": "BASKETBALL001",
+        "isRented": false,
+        "renterName": "",
+        "rentalStartTime": "",
+        "rentalEndTime": ""
+      }
+    ],
+    "facilityID": "FACILITY001" 
+  }
