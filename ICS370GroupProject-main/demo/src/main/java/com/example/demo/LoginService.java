@@ -22,9 +22,12 @@ public class LoginService {
     }
 
     private static String loggedInUsername;
+    private static Integer loggedInUserId;
+
 
     public static User authenticate(String username, String password) {
-        String sql = "SELECT role FROM users WHERE username = ? AND password = ?";
+        // --- MODIFICATION: Select the 'id' column as well ---
+        String sql = "SELECT id, role FROM users WHERE username = ? AND password = ?";
         try (Connection conn = DatabaseConnector.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
@@ -33,16 +36,20 @@ public class LoginService {
 
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
+                    // --- MODIFICATION: Store both the user's ID and username ---
+                    loggedInUserId = rs.getInt("id");
+                    loggedInUsername = username;
+
                     String roleString = rs.getString("role");
                     Role role = Role.valueOf(roleString.toUpperCase());
-                    loggedInUsername = username;
+
                     return new User(username, role);
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+        return null; // Authentication failed
     }
 
     public static class User {
@@ -94,7 +101,14 @@ public class LoginService {
         }
     }
 
+    public static Integer getLoggedInUserId() {
+        return loggedInUserId;
+    }
+
+
     public static void logout() {
-        loggedInUsername = null; // Clear the current session
+        // --- MODIFICATION: Clear the ID on logout as well ---
+        loggedInUsername = null;
+        loggedInUserId = null;
     }
 }

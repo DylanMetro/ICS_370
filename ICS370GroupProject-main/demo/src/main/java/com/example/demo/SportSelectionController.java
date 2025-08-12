@@ -80,6 +80,8 @@ public class SportSelectionController {
         }
     }
 
+
+
     // You'll also need a Sport model class
     // You can create a new file Sport.java for this
     public static class Sport {
@@ -111,6 +113,20 @@ public class SportSelectionController {
 
     @FXML
     private void logout() {
-        // Standard logout logic
+        // Clear the user's session information
+        LoginService.logout();
+
+        // Navigate back to the login screen
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/login-view.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) continueButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Login");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert("Navigation Error", "Failed to load the login screen.");
+        }
     }
 }

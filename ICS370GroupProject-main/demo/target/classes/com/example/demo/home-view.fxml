@@ -6,6 +6,7 @@
     <Label text="Sport Scheduling App Home Page" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
     <Button text="Reserve/Cancel Time" fx:id="reserveCancelButton" onAction="#onManageBookingTimeClicked" />
     <Button text="Rent Equipment" fx:id="rentEquipButton" onAction="#onRentEquipClicked" />
+    <Button text="Tournaments" onAction="#onTournamentsClicked" />
     <Button text="Change Sport" onAction="#changeSport" />
     <Button text="Logout" onAction="#logout" />
     <Label text="Status: Ready" fx:id="statusLabel" style="-fx-font-size: 14px; -fx-text-fill: green;" />

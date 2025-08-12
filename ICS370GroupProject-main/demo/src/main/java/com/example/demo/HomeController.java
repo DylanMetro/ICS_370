@@ -117,4 +117,41 @@ public class HomeController {
         }
     }
 
+    @FXML
+    private void onTournamentsClicked() {
+        try {
+            FXMLLoader loader;
+            String fxmlPath;
+            String title;
+
+            // Navigate to a different view based on user role
+            if (LoginService.getRole(LoginService.getLoggedInUsername()) == LoginService.Role.MANAGER) {
+                fxmlPath = "/com/example/demo/create-tournament-view.fxml";
+                title = "Create Tournament";
+            } else {
+                fxmlPath = "/com/example/demo/tournament-view.fxml";
+                title = "Tournaments";
+            }
+
+            loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Parent root = loader.load();
+
+            // Pass the selected sport to the new controller
+            if (loader.getController() instanceof CreateTournamentController) {
+                ((CreateTournamentController) loader.getController()).initData(selectedSport);
+            } else if (loader.getController() instanceof TournamentViewController) {
+                ((TournamentViewController) loader.getController()).initData(selectedSport);
+            }
+
+            Stage stage = (Stage) statusLabel.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle(title);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert("Error", "Failed to load the tournament view.");
+        }
+    }
+
 }
